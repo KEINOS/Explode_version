@@ -16,4 +16,4 @@ php:
   # latest
   - nightly
 
-script: ls -la && cd tests && ./run_test.php
+script: tests/run_test.php
