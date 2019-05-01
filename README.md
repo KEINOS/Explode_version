@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/KEINOS/Explode_version.svg?branch=master)](https://travis-ci.org/KEINOS/Explode_version)
+
 # Explode_version
 
 `explode_version` command explodes a given version info in to JSON.
