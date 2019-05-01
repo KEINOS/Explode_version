@@ -1,0 +1,16 @@
+{"sample":"php7.0.1-cli-alpine3.0","expect":{"php":{"name":"php","version":"7.0.1"},"cli":{"name":"cli"},"alpine":{"name":"alpine","version":"3.0"}}}
+{"sample":"php-7.0.1-cli_alpine3.0","expect":{"php":{"name":"php","version":"7.0.1"},"cli":{"name":"cli"},"alpine":{"name":"alpine","version":"3.0"}}}
+{"sample":"php-7.0.1RC1-cli-alpine3.0","expect":{"php":{"name":"php","version":"7.0.1"},"rc":{"name":"RC","version":"1"},"cli":{"name":"cli"},"alpine":{"name":"alpine","version":"3.0"}}}
+{"sample":"5-alpine","expect":{"base":{"version":"5"},"alpine":{"name":"alpine"}}}
+{"sample":"5-alpine3.8","expect":{"base":{"version":"5"},"alpine":{"name":"alpine","version":"3.8"}}}
+{"sample":"5-apache-jessie","expect":{"base":{"version":"5"},"apache":{"name":"apache"},"jessie":{"name":"jessie"}}}
+{"sample":"5-cli-alpine3.4","expect":{"base":{"version":"5"},"cli":{"name":"cli"},"alpine":{"name":"alpine","version":"3.4"}}}
+{"sample":"5.5","expect":{"base":{"version":"5.5"}}}
+{"sample":"5.5-alpine","expect":{"base":{"version":"5.5"},"alpine":{"name":"alpine"}}}
+{"sample":"5.5-zts-alpine","expect":{"base":{"version":"5.5"},"zts":{"name":"zts"},"alpine":{"name":"alpine"}}}
+{"sample":"5.5.18","expect":{"base":{"version":"5.5.18"}}}
+{"sample":"5.5.18-apache","expect":{"base":{"version":"5.5.18"},"apache":{"name":"apache"}}}
+{"sample":"5.6.33-cli-alpine3.4","expect":{"base":{"version":"5.6.33"},"cli":{"name":"cli"},"alpine":{"name":"alpine","version":"3.4"}}}
+{"sample":"5.6.33-zts-alpine3.4","expect":{"base":{"version":"5.6.33"},"zts":{"name":"zts"},"alpine":{"name":"alpine","version":"3.4"}}}
+{"sample":"5.6.33RC1-cli-alpine3.4","expect":{"base":{"version":"5.6.33"},"rc":{"name":"RC","version":"1"},"cli":{"name":"cli"},"alpine":{"name":"alpine","version":"3.4"}}}
+{"sample":"7.0.3-apache","expect":{"base":{"version":"7.0.3"},"apache":{"name":"apache"}}}

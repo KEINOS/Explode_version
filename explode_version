@@ -1,0 +1,148 @@
+#!/usr/bin/env php
+<?php
+/**
+ * This command explodes a given term of version info in to JSON format.
+ *
+ * @contributors KEINOS
+ * @latest https://github.com/KEINOS/Explode_version
+ */
+namespace KEINOS;
+
+/* [Settings] ============================================================== */
+
+const SUCCESS = 0;
+const FAILURE = 1;
+
+$option_index = null;
+$option_short = 'hp'; // -h, -p
+$option_long  = [
+    'help',          // --help
+    'pretty',        // --pretty
+];
+
+/* [Main] ================================================================== */
+
+// Get arguments
+$options = getopt($option_short, $option_long, $option_index);
+$terms   = array_slice($argv, $option_index);
+
+// Option detection
+switch (true) {
+    case array_key_exists('h', $options):
+    case array_key_exists('help', $options):
+        print_help();
+        exit(SUCCESS);
+    case array_key_exists('p', $options):
+    case array_key_exists('pretty', $options):
+        $is_pretty_print = true;
+        break;
+    default:
+        $is_pretty_print = false;
+        break;
+}
+
+// Get term
+if (! isset($terms[0])) {
+    print_error('Term missing');
+    print_help();
+    exit(FAILURE);
+}
+$value  = $terms[0];
+
+// Explode version
+$result = explode_version($value);
+if (false === $result) {
+    print_error('Bad argument.');
+    exit(FAILURE);
+}
+
+// Output Results
+echo $result;
+exit(SUCCESS);
+
+/* [Functions] ============================================================= */
+
+function array_to_json($array)
+{
+    global $is_pretty_print;
+    $options = ($is_pretty_print) ? JSON_PRETTY_PRINT : null;
+    return json_encode($array, $options) . PHP_EOL;
+}
+
+function explode_version($string)
+{
+    // initialize
+    $result = [];
+    $temp   = [];
+    $is_next_version = false;
+
+    $tokens = split_to_tokens($string);
+    foreach ($tokens as $token) {
+        $token = trim($token);
+
+        if (ctype_alpha($token)) {
+            if ($is_next_version) {
+                $key = (isset($temp['name'])) ? strtolower($temp['name']) : '';
+                $result[$key] = $temp;
+            }
+            $temp['name']    = $token;
+            $is_next_version = true;
+            continue;
+        }
+
+        if (ctype_digit(str_replace('.', '', $token))) {
+            $temp['version'] = $token;
+            $key = (isset($temp['name'])) ? strtolower($temp['name']) : 'base';
+            $result[$key] = $temp;
+            $temp = [];
+            $is_next_version = false;
+            continue;
+        }
+    }
+
+    if (! empty($temp)) {
+        $key = (isset($temp['name'])) ? strtolower($temp['name']) : 'base';
+        $result[$key] = $temp;
+    }
+
+    return array_to_json($result);
+}
+
+function get_msg_help()
+{
+    $name_command = basename(__FILE__);
+    return <<< HELP
+Usage: ${name_command} [OPTION] TERM
+
+OPTION:
+    -h, --help    This help.
+    -p, --pretty  Outputs with indentation.
+
+TERM: A string to be alanlized and exploded.
+
+HELP;
+}
+
+function print_error($message, $add_unserline = true)
+{
+    $message   = trim($message);
+    $underline = '';
+    if ($add_unserline) {
+        $underline = str_repeat('-', strlen($message) + 1) . PHP_EOL;
+    }
+    $message = $message . PHP_EOL . $underline;
+    fputs(STDERR, $message);
+}
+
+function print_help()
+{
+    echo PHP_EOL . trim(get_msg_help()) . PHP_EOL . PHP_EOL;
+}
+
+function split_to_tokens($string)
+{
+    $string = str_replace('-_', ' ', $string);
+    preg_match_all('/([0-9\.]+|[a-zA-Z]+)/', $string, $matches);
+
+    return $matches[0];
+}
