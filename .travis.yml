@@ -16,4 +16,4 @@ php:
   # latest
   - nightly
 
-script: tests/run_test.php
+script: php tests/run_test.php
