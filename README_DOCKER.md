@@ -55,7 +55,7 @@ $docker run --rm my_explode_version --pretty "php:7.3.4-cli-alpine3.9"
 
 ## Useful tips
 
-If you don't need much speed to process the command but want to use it easily, then it is recommended to create a bash shell script as an alias.
+If you don't need much speed to process the command but want to use it easily, then it is recommended to create a shell script as an alias.
 
 1. Either Create/Copy/Download/Clone the shell script file "`explode_version.sh`" below:
 
