@@ -6,7 +6,6 @@ Docker image is provided for those who don't want to install PHP in addition.
 - Docker Hub: <https://hub.docker.com/r/keinos/explode_version>
 - Requirements:
   - Docker >= 18.09.0 (Tested version)
-  - Git >= 2.20.1 (Tested version)
 
 ```shellsession
 $ docker run --rm keinos/explode_version --pretty "php:7.3.4-cli-alpine3.9"
@@ -28,6 +27,10 @@ $ docker run --rm keinos/explode_version --pretty "php:7.3.4-cli-alpine3.9"
 ## Build your own
 
 You can build the docker image locally if want.
+
+- Requirements:
+  - Docker >= 18.09.0 (Tested version)
+  - Git >= 2.20.1 (Tested version)
 
 ```shellsession
 $ # Clone and move to the repository.
@@ -55,7 +58,7 @@ $docker run --rm my_explode_version --pretty "php:7.3.4-cli-alpine3.9"
 
 ## Useful tips
 
-If you don't need much speed to process the command but want to use it easily, then it is recommended to create a shell script as an alias.
+If you don't need it to be so fast but want to use it easily, then it is recommended to **create a shell script as an alias**.
 
 1. Either Create/Copy/Download/Clone the shell script file "`explode_version.sh`" below:
 
