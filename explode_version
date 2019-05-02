@@ -23,7 +23,7 @@ $option_long  = [
 /* [Main] ================================================================== */
 
 // Get arguments
-$options = getopt($option_short, $option_long, $option_index);
+$options = get_options($option_short, $option_long, $option_index);
 $terms   = array_slice($argv, $option_index);
 
 // Option detection
@@ -42,12 +42,13 @@ switch (true) {
 }
 
 // Get term
-if (! isset($terms[0])) {
+$value  = (isset($terms[0])) ? $terms[0] : '';
+// Show help on empty
+if (empty($value) || ($value === $argv[0])) {
     print_error('Term missing');
     print_help();
     exit(FAILURE);
 }
-$value  = $terms[0];
 
 // Explode version
 $result = explode_version($value);
@@ -121,6 +122,64 @@ OPTION:
 TERM: A string to be alanlized and exploded.
 
 HELP;
+}
+
+/** getopt alias for PHP5 compatible */
+function get_options($option_short, $option_long, &$option_index)
+{
+    global $argv, $argc;
+
+    if($argc === 1){
+        $option_index = null;
+        return [];
+    }
+
+    for ($i=1; $i < $argc; $i++) {
+        $arg = $argv[$i];
+        if (is_option_long($arg)) {
+            continue;
+        }
+        if (is_option_short($arg)) {
+            continue;
+        }
+        $option_index = $i;
+        break;
+    }
+    return getopt($option_short, $option_long);
+}
+
+function is_in_option_long($key)
+{
+    global $option_long;
+    return in_array(trim($key, '--'), $option_long);
+}
+
+function is_in_option_short($key)
+{
+    global $option_short;
+
+    $option_short = str_split($option_short);
+
+    if (is_in_option_long($key)) {
+        return false;
+    }
+    return in_array(trim($key, '-'), $option_short);
+}
+
+function is_option_long($string)
+{
+    if ('--' !== substr($string, 0, 2)) {
+        return false;
+    }
+    return is_in_option_long($string);
+}
+
+function is_option_short($string)
+{
+    if ('-' !== $string[0]) {
+        return false;
+    }
+    return is_in_option_short($string);
 }
 
 function print_error($message, $add_unserline = true)
