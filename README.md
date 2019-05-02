@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/KEINOS/Explode_version.svg?branch=master)](https://travis-ci.org/KEINOS/Explode_version)
+TravisCI:[![Build Status](https://travis-ci.org/KEINOS/Explode_version.svg?branch=master)](https://travis-ci.org/KEINOS/Explode_version) DockerHub:[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/keinos/explode_version.svg)](https://hub.docker.com/r/keinos/explode_version)
 
 # Explode_version
 
