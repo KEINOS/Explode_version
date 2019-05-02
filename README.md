@@ -45,3 +45,5 @@ $ ./explode_version --pretty php:7.3.4-cli-alpine3.9
     }
 }
 ```
+
+- For Docker users see: [README_DOCKER.md](./README_DOCKER.md)
