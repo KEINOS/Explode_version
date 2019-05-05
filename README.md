@@ -13,24 +13,7 @@ Useful to get version info into tokens for versioning. Mostly aimed to use for D
 ## Usage
 
 ```shellsession
-$ ./explode_version --help
-Usage: explode_version [OPTION] VERSION
-
-OPTION:
-  -h, --help    This help.
-      --pretty  Outputs with indentation.
-
-VERSION: A string to be alanlized.
-
-```
-
-```shellsession
-$ ./explode_version php7.0.1-cli-alpine3.0
-{"php":{"name":"php","version":"7.0.1"},"cli":{"name":"cli"},"alpine":{"name":"alpine","version":"3.0"}}
-```
-
-```shellsession
-$ ./explode_version --pretty php:7.3.4-cli-alpine3.9
+$ ./explode_version --pretty 'php 7.3.4-cli-alpine3.9'
 {
     "php": {
         "name": "php",
@@ -44,6 +27,25 @@ $ ./explode_version --pretty php:7.3.4-cli-alpine3.9
         "version": "3.9"
     }
 }
+```
+
+```shellsession
+$ ./explode_version php7.0.1-cli-alpine3.0
+{"php":{"name":"php","version":"7.0.1"},"cli":{"name":"cli"},"alpine":{"name":"alpine","version":"3.0"}}
+```
+
+## Help
+
+```shellsession
+$ ./explode_version --help
+Usage: explode_version [OPTION] VERSION
+
+OPTION:
+  -h, --help    This help.
+      --pretty  Outputs with indentation.
+
+VERSION: A string to be alanlized.
+
 ```
 
 - For Docker users see: [README_DOCKER.md](./README_DOCKER.md)
