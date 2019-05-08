@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/KEINOS/Explode_version.svg?branch=master)](https://travis-ci.org/KEINOS/Explode_version) [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/keinos/explode_version.svg)](https://hub.docker.com/r/keinos/explode_version)
+[![](https://images.microbadger.com/badges/image/keinos/explode_version.svg)](https://microbadger.com/images/keinos/explode_version "View detailed image info on microbadger.com") [![Build Status](https://travis-ci.org/KEINOS/Explode_version.svg?branch=master)](https://travis-ci.org/KEINOS/Explode_version) [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/keinos/explode_version.svg)](https://hub.docker.com/r/keinos/explode_version)
 
 # Explode_version
 
@@ -10,9 +10,9 @@ Useful to get version info into tokens for versioning. Mostly aimed to use for D
 
 - For Docker Users:
   - Image: `keinos/explode_version`
-  - Dockerfile: https://github.com/KEINOS/Explode_version/blob/master/Dockerfile
-  - DockerHub: https://hub.docker.com/r/keinos/explode_version
-
+  - Repositories:
+    - Image: https://hub.docker.com/r/keinos/explode_version @ DockerHub
+    - Source: https://github.com/KEINOS/Explode_version/blob/master/Dockerfile @ GitHub
   - Sample usage:
 
   ```shellsession
