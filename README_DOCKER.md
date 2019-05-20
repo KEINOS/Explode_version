@@ -76,9 +76,9 @@ If you don't need it to be so fast but want to use it easily, then it is recomme
 
     ```
 
-    - Copy : <https://github.com/KEINOS/Explode_version/blob/master/explode_version.sh>
+    - Copy: <https://github.com/KEINOS/Explode_version/blob/master/explode_version.sh>
     - Download: <https://KEINOS.github.io/Explode_version/explode_version.sh>
-    - Clonse: `https://github.com/KEINOS/Explode_version.git`
+    - Clone: `https://github.com/KEINOS/Explode_version.git`
 
 2. Change mode of the file:
 
