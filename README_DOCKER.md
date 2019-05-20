@@ -94,11 +94,11 @@ If you don't need it to be so fast but want to use it easily, then it is recomme
 
 3. SymLink to ENV path (Optional)
 
-    Symbolic linking the script into the directory in env path(`$PATH`) might be handy.
+    It might be handy to symbolic link the script into the directory in ENV path(`$PATH`).
 
     ```shellsession
     $ # SymLinking
-    $ sudo ln /path/to/downloaded/dir/explode_version.sh /usr/local/bin/explode_version
+    $ sudo ln -s /path/to/downloaded/dir/explode_version.sh /usr/local/bin/explode_version
     $ # Check if it works in any directory
     $ cd ~/
     $ explode_version --pretty 2.3.4-alpine3.4
