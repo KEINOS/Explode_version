@@ -86,7 +86,7 @@ If you don't need it to be so fast but want to use it easily, then it is recomme
     $ # Move to dir of the script
     $ cd /path/to/downloaded/dir/
     $ # Change mode
-    $ chmod +x explode_version
+    $ chmod +x explode_version.sh
     $ # Check if it works
     $ ./explode_version.sh --pretty 2.3.4-alpine3.4
     ...
@@ -101,6 +101,6 @@ If you don't need it to be so fast but want to use it easily, then it is recomme
     $ sudo ln /path/to/downloaded/dir/explode_version.sh /usr/local/bin/explode_version
     $ # Check if it works in any directory
     $ cd ~/
-    $ explode_version.sh --pretty 2.3.4-alpine3.4
+    $ explode_version --pretty 2.3.4-alpine3.4
     ...
     ```
