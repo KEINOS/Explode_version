@@ -1,5 +1,11 @@
-FROM php:7.1.23-cli-alpine3.8
+FROM keinos/php7-alpine:latest
+
+RUN apk update \
+    && apk add --update \
+      php-json@php \
+    && rm -rf /var/cache/apk/*
 
 COPY explode_version /usr/local/bin/
 COPY tests/run_test.sh /
+
 ENTRYPOINT [ "/usr/local/bin/explode_version" ]
