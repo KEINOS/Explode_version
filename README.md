@@ -2,7 +2,7 @@
 
 # Explode Version Number to JSON
 
-`explode_version` command/script explodes a given version info in to JSON object string.
+The `explode_version` command (or the script) explodes a given version info in to JSON object string.
 
 Useful to get version info into tokens for versioning. Mostly aimed to use for DockerHub's tag list.
 
