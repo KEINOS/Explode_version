@@ -40,7 +40,7 @@ $ # Build docker image
 $ docker build -t my_explode_version .
 ...
 $ # Run to see work
-$docker run --rm my_explode_version --pretty "php:7.3.4-cli-alpine3.9"
+$ docker run --rm my_explode_version --pretty "php:7.3.4-cli-alpine3.9"
 {
     "php": {
         "name": "php",
