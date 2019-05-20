@@ -26,11 +26,13 @@ For example, the string "`php:7.3.4-cli-alpine3.9`" becomes as below:
 
 ## Usage
 
-- For **NON Docker Users**:
-  - Requirements: PHP >= `5.6.40` ([PHP versions tests](https://travis-ci.org/KEINOS/Explode_version))
+### For **NON Docker Users**:
+
+  - Requirements: PHP >= `5.6.40` ([PHP versions tested](https://travis-ci.org/KEINOS/Explode_version))
   - Source Code:
     - View: https://github.com/KEINOS/Explode_version/blob/master/explode_version
     - Download: https://KEINOS.github.io/Explode_version/explode_version
+      - Note: Don't forget to `chmod +x` the downloaded script.
 
   - Sample Usage:
 
@@ -56,7 +58,8 @@ For example, the string "`php:7.3.4-cli-alpine3.9`" becomes as below:
     {"php":{"name":"php","version":"7.0.1"},"cli":{"name":"cli"},"alpine":{"name":"alpine","version":"3.0"}}
     ```
 
-- For **Docker Users**:
+### For **Docker Users**:
+
   - Docker Image: `keinos/explode_version` @ Docker Hub
   - Repositories:
     - Image : https://hub.docker.com/r/keinos/explode_version @ DockerHub
